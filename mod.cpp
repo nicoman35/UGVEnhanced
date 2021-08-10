@@ -1,0 +1,14 @@
+name 				= "NIC UGV Enhanced";
+picture 			= "logo.paa";
+actionName			= "Website";
+action				= "https://github.com/nicoman35/Set-Flight-Height";
+description 		= "UGV Enhanced";
+logo 				= "logo.paa";
+logoOver 			= "logo.paa";
+tooltip				= "UGV Enhanced v1.0";
+tooltipOwned		= "UGV Enhanced Owned";
+overview			= "UGV Enhanced v1.0<br />Slighly enhanced speed and armour. Auto unflip routine.<br />Turret changes:<br /> Altered night vision, increased zoom ratio, increased ammo count, turret movement does not start engine, added search light.";
+author 				= "NIC";
+overviewPicture		= "logo.paa";
+overviewText 		= "UGV Enhanced";
+overviewFootnote 	= "";

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="NIC_UGV_ENH">
+    <Package name="UGV_ENH">
+		<Key ID="STR_NIC_UGV_TITLE_VERSION">
+			<Original>UGV Stomper Enhanced v1.0</Original>
+			<German>UGV Stomper Vebessert v1.0</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_TITLE">
+			<Original>NIC UGV Stomper Enhanced</Original>
+			<German>NIC UGV Stomper Vebessert</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED">
+			<Original>Max Speed Limit</Original>
+			<German>Maximalgeschwindigkeit</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_AI_SPEED_LIMIT_ALLOW">
+			<Original>Reduce AI Max Speed</Original>
+			<German>Reduziere Maximale AI Geschwindigkeit</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_AI_SPEED_LIMIT_ALLOW_TIP">
+			<Original>When checked, AI max speed is limited</Original>
+			<German>Falls aktiviert, wird die AI Maximalgeschwindigkeit reduziert</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_TIP">
+			<Original>Maximum speed limit when AI is driving the UGV (km/h)</Original>
+			<German>Maximale Geschwindigkeit, wenn die AI das UGV fährt (km/h)</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_D">
+			<Original>Delta Max Speed</Original>
+			<German>Delta Maximalgeschwindigkeit</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_D_TIP">
+			<Original>Change of maximum speed limit per ordering 'increase' or 'lower' max speed (km/h)</Original>
+			<German>Veränderung der Maximalgeschwindigkeit, wenn 'steigern' oder 'verringern' angeordnet wid (km/h)</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_D_A">
+			<Original>Increase / Decrease Dialog</Original>
+			<German>Erhöhen / Verringern Dialog</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_D_A_TIP">
+			<Original>Allow Increase / Decrease action dialog for UGV</Original>
+			<German>Erlaube Erhöhen / Verringern Aktionsdialog für das UGV</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_GLB">
+			<Original>Global Max Speed</Original>
+			<German>Globale Maximalgeschwindigkeit</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_GLB_TIP">
+			<Original>Changing the speed via dialog action sets same max speed for all UGVs</Original>
+			<German>Verändern der Geschwindigkeit via Dialog Aktion setzt dieselbe Maximalgeschwindigkeit für alle UGVs</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_INCREASE">
+			<Original>Increase AI Max Speed</Original>
+			<German>AI Maximalgeschwindigkeit erhöhen</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_DECREASE">
+			<Original>Decrease AI Max Speed</Original>
+			<German>AI Maximalgeschwindigkeit verringern</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_SET">
+			<Original>AI max driving speed set to %1 km/h</Original>
+			<German>AI Maximalgeschwindigkeit verändert auf %1 km/h</German>
+		</Key>
+	</Package>
+</Project>
