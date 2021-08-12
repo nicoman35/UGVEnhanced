@@ -47,6 +47,7 @@ class manual;
 class cfgWeapons {
 	class HMG_127_UGV_SNIPER: HMG_127_UGV {
 		scope			= 2;
+		displayName		= "$STR_NIC_UGV_HMG";
 		maxZeroing 		= 2500;
 		class manual: manual {
 			reloadTime	= 0.15;

@@ -61,5 +61,9 @@
 			<Original>AI max driving speed set to %1 km/h</Original>
 			<German>AI Maximalgeschwindigkeit verändert auf %1 km/h</German>
 		</Key>
+		<Key ID="STR_NIC_UGV_HMG">
+			<Original>Precision HMG 12.7 mm</Original>
+			<German>Präzisions HMG 12.7 mm</German>
+		</Key>
 	</Package>
 </Project>
