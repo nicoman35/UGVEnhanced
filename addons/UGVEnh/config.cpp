@@ -108,70 +108,68 @@ class CfgVehicles {
 		fuelCapacity		= 20;
 		maxOmega			= 380;
 		armor				= 40;
-		transportSoldier	= 1;		// Does not work proplerly. AI troops board the vehicle, but refuse to disembark when commanded. Only getting them out by force via Zeus works. Workaround: Command eject.
+		transportSoldier	= 1;		// Does not work proplerly. AI troops board the vehicle, but refuse to disembark when commanded to. Workaround: Command eject.
 		class Viewoptics: ViewOptics {
 			visionMode[]	= {"Normal", "NVG", "Ti"};
 			thermalMode[]	= {4, 5};
 		};
 		class HitPoints: HitPoints {
 			class HitHull {
-				armor = 1;
-				// material=50;
-				// armorComponent="hit_hull";
-				// name="hit_hull_point";
-				// visual="zbytek";
-				// passThrough=1;
-				// minimalHit=0.2;
-				// explosionShielding=0.2;
-				// radius=0.30000001;
+				armor 				= 1;
+				material			= 50;
+				armorComponent		= "hit_hull";
+				name				= "hit_hull_point";
+				visual				= "zbytek";
+				passThrough			= 1;
+				minimalHit			= 0.2;
+				explosionShielding	= 0.2;
+				radius				= 0.30000001;
 			};
-			// class HitEngine
-			// {
-				// armor=2;
-				// material=-1;
-				// armorComponent="hit_engine";
-				// name="hit_engine_point";
-				// visual="-";
-				// passThrough=0.5;
-				// minimalHit=0.2;
-				// explosionShielding=0.2;
-				// radius=0.30000001;
-			// };
-			// class HitFuel
-			// {
-				// armor=1;
-				// material=-1;
-				// armorComponent="hit_fuel";
-				// name="hit_fuel_point";
-				// visual="-";
-				// passThrough=0.30000001;
-				// minimalHit=0.1;
-				// explosionShielding=0.60000002;
-				// radius=0.30000001;
-			// };
+			class HitEngine {
+				armor			 	= 2;
+				material			= -1;
+				armorComponent		= "hit_engine";
+				name				= "hit_engine_point";
+				visual				= "-";
+				passThrough			= 0.5;
+				minimalHit			= 0.2;
+				explosionShielding	= 0.2;
+				radius				= 0.30000001;
+			};
+			class HitFuel {
+				armor				= 1;
+				material			= -1;
+				armorComponent		= "hit_fuel";
+				name				= "hit_fuel_point";
+				visual				= "-";
+				passThrough			= 0.30000001;
+				minimalHit			= 0.1;
+				explosionShielding	= 0.60000002;
+				radius				= 0.30000001;
+			};
 			class HitLFWheel: HitLFWheel {
 				armor 	= 1;
-				// name	= "wheel_1_1";
+				name	= "wheel_1_1";
 			};
 			class HitLF2Wheel: HitLF2Wheel {
 				armor 	= 1;
-				// name	= "wheel_1_2";
+				name	= "wheel_1_2";
 			};
 			class HitLMWheel: HitLMWheel {
 				armor 	= 1;
-				// name	= "wheel_1_3";
+				name	= "wheel_1_3";
 			};
 			class HitRFWheel: HitRFWheel {
 				armor 	= 1;
-				// name	= "wheel_2_1";
+				name	= "wheel_2_1";
 			};
 			class HitRF2Wheel: HitRF2Wheel {
 				armor 	= 1;
-				// name	= "wheel_2_2";
+				name	= "wheel_2_2";
 			};
 			class HitRMWheel: HitRMWheel {
 				armor 	= 1;
-				// name	= "wheel_2_3";
+				name	= "wheel_2_3";
 			};
 		};
 		class Components: Components {  
