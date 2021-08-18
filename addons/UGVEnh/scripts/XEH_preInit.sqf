@@ -16,7 +16,7 @@
 	"SLIDER",   																						// setting type
 	[format[localize "STR_NIC_UGV_MAX_SPEED"], format[localize "STR_NIC_UGV_MAX_SPEED_TIP"]],			// [setting name, tooltip]
 	format[localize "STR_NIC_UGV_TITLE"], 																// pretty name of the category where the setting can be found. Can be stringtable entry.
-	[20, 75, 40, 0],																					// [_min, _max, _default, _trailingDecimals]
+	[20, 75, 45, 0],																					// [_min, _max, _default, _trailingDecimals]
     true,																								// "_isGlobal" flag. Set this to true to always have this setting synchronized between all clients in multiplayer
 	{NIC_UGV_ENH_AI_SPEED_LIMIT = round NIC_UGV_ENH_AI_SPEED_LIMIT}										// code executed on setting change
 ] call CBA_fnc_addSetting;

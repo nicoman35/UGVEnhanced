@@ -18,6 +18,6 @@
 
 params [["_UGV", objNull]];
 if (isNull _UGV) exitWith {false};
-if (UAVControl _UGV select 0 == player) exitWith {true};
+if (UAVControl _UGV #0 == player) exitWith {true};
 if (_UGV == cursorObject && _UGV distance player < 20) exitWith {true};
 false

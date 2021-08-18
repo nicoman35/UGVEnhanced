@@ -30,7 +30,7 @@ private _engineOFFcounter = 0;
 while {alive _UGV && _engineOFFcounter < 5} do {
 	_engineOFFcounter = _engineOFFcounter + 1;
 	if (isEngineOn _UGV) then {_engineOFFcounter = 0};
-	(_UGV call BIS_fnc_getPitchBank) params ["_vx","_vy"];
+	(_UGV call BIS_fnc_getPitchBank) params ["_vx", "_vy"];
 	if (([_vx,_vy] findIf {_x > 80 || _x < -80}) != -1 && {!canMove _UGV}) then {
 		private _upsideDown = (vectorUp _UGV vectorDotProduct surfaceNormal getPos _UGV) < -0.80;
 		private _bank = _UGV call BIS_fnc_getPitchBank select 1;
@@ -40,7 +40,7 @@ while {alive _UGV && _engineOFFcounter < 5} do {
 		if (!_upsideDown && 55 > abs _bank) exitWith {false};
 
 		private _bbr = boundingBoxReal _UGV;
-		private _UGVWidth = abs (_bbr#0#0 * 2);
+		private _UGVWidth = abs (_bbr #0 #0 * 2);
 		private _forceFactor = 1;
 		
 		// force factor is set in vet_unflipping_unflip_start event
