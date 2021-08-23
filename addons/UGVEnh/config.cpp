@@ -28,6 +28,7 @@ class CfgFunctions {
 			class AddAiDeltaSpeedAction {};
 			class AddAiDeltaSpeedActionCheck {};
 			class DeltaMaxSpeed {};
+			class CheckRoads {};
 		};
 	};
 };
@@ -44,14 +45,76 @@ class DefaultVehicleSystemsDisplayManagerRight {
 };
 class HMG_127_UGV;
 class manual;
+class Mode_Burst;
 class cfgWeapons {
 	class HMG_127_UGV_SNIPER: HMG_127_UGV {
 		scope			= 2;
 		displayName		= "$STR_NIC_UGV_HMG";
+		modes[]			= {
+			"single",
+			"manual",
+			"close",
+			"short",
+			"medium",
+			"far"
+		};
 		maxZeroing 		= 2500;
-		class manual: manual {
+		class single: Mode_Burst {
 			reloadTime	= 0.15;
 			dispersion	= 0.0002;
+			burst		= 3;
+			sounds[]	= {
+				"StandardSound"
+			};
+			class StandardSound	{
+				begin1[]		= {
+					"A3\Sounds_F\arsenal\weapons_vehicles\HMG_127mm\HMG_127mm_01",
+					1.5848932,
+					1,
+					2100
+				};
+				begin2[]		= {
+					"A3\Sounds_F\arsenal\weapons_vehicles\HMG_127mm\HMG_127mm_02",
+					1.5848932,
+					1,
+					2100
+				};
+				begin3[]		= {
+					"A3\Sounds_F\arsenal\weapons_vehicles\HMG_127mm\HMG_127mm_03",
+					1.5848932,
+					1,
+					2100
+				};
+				soundBegin[]	= {
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+				closure1[]		= {
+					"A3\Sounds_F\weapons\Closure\sfx10",
+					0.63095737,
+					1,
+					20
+				};
+				closure2[]		= {
+					"A3\sounds_f\weapons\closure\sfx11",
+					0.63095737,
+					1.2,
+					20
+				};
+				soundClosure[]	= {
+					"closure1",
+					0.5,
+					"closure2",
+					0.5
+				};
+			};
+		};
+		class manual: manual {
+			dispersion	= 0.0008;		// original value: 0.0016
 		};
 		class close: manual	{
 			aiBurstTerminable		= 1;

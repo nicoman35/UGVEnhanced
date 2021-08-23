@@ -65,5 +65,13 @@
 			<Original>Precision HMG 12.7 mm</Original>
 			<German>Präzisions HMG 12.7 mm</German>
 		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_RD">
+			<Original>No Speed LImit On Roads</Original>
+			<German>Keine Geschwindigkeitsbegrenzung Auf Straßen</German>
+		</Key>
+		<Key ID="STR_NIC_UGV_MAX_SPEED_RD_TIP">
+			<Original>Raise max speed limit to maximum value, once the UGV is on a road</Original>
+			<German>Maximalgeschwindigkeit auf maximum setzen, sobald das UGV sich auf einer Straße befindet</German>
+		</Key>
 	</Package>
 </Project>

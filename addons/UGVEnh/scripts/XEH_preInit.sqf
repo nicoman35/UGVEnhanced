@@ -21,6 +21,14 @@
 	{NIC_UGV_ENH_AI_SPEED_LIMIT = round NIC_UGV_ENH_AI_SPEED_LIMIT}										// code executed on setting change
 ] call CBA_fnc_addSetting;
 [
+	"NIC_UGV_ENH_AI_ROAD_MAX",
+	"CHECKBOX",
+	[format[localize "STR_NIC_UGV_MAX_SPEED_RD"], format[localize "STR_NIC_UGV_MAX_SPEED_RD_TIP"]],
+	format[localize "STR_NIC_UGV_TITLE"],
+	true,
+    true
+] call CBA_fnc_addSetting;
+[
 	"NIC_UGV_ENH_AI_SPEED_DELTA",
 	"SLIDER",
 	[format[localize "STR_NIC_UGV_MAX_SPEED_D"], format[localize "STR_NIC_UGV_MAX_SPEED_D_TIP"]],
