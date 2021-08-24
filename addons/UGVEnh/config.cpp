@@ -51,15 +51,15 @@ class cfgWeapons {
 		scope			= 2;
 		displayName		= "$STR_NIC_UGV_HMG";
 		modes[]			= {
-			"single",
 			"manual",
+			"precisionBurst",
 			"close",
 			"short",
 			"medium",
 			"far"
 		};
 		maxZeroing 		= 2500;
-		class single: Mode_Burst {
+		class precisionBurst: Mode_Burst {
 			reloadTime	= 0.15;
 			dispersion	= 0.0002;
 			burst		= 3;
