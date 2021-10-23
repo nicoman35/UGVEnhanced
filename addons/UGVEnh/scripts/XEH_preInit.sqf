@@ -58,3 +58,16 @@
 	true,
     true
 ] call CBA_fnc_addSetting;
+[
+	"NIC_UGV_ENH_AI_REFRESH_ALLOW",
+	"CHECKBOX",
+	[format[localize "STR_NIC_UGV_REFRESH"], format[localize "STR_NIC_UGV_REFRESH_TIP"]],
+	format[localize "STR_NIC_UGV_TITLE"],
+	true,
+    true,
+	{
+		{
+			[_x] call NIC_UGV_fnc_AddAiRefreshAction;
+		} foreach vehicles;
+	}		
+] call CBA_fnc_addSetting;

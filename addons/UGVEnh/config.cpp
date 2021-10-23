@@ -27,8 +27,12 @@ class CfgFunctions {
 			};
 			class AddAiDeltaSpeedAction {};
 			class AddAiDeltaSpeedActionCheck {};
-			class DeltaMaxSpeed {};
+			class AddAiRefreshAction {};
 			class CheckRoads {};
+			class DeltaMaxSpeed {};
+			class RefreshAi {};	
+			class RefreshAiActionCheck {};
+			class UgvUnflipVehicle {};
 		};
 	};
 };
@@ -183,7 +187,7 @@ class RCWSOptics;
 class Turrets;
 class MainTurret;
 class Components;
-class Eventhandlers;
+// class Eventhandlers;
 class HitPoints	{
 	class HitLFWheel;
 	class HitLBWheel;
@@ -272,27 +276,27 @@ class CfgVehicles {
 				radius				= 0.30000001;
 			};
 			class HitLFWheel: HitLFWheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_1_1";
 			};
 			class HitLF2Wheel: HitLF2Wheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_1_2";
 			};
 			class HitLMWheel: HitLMWheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_1_3";
 			};
 			class HitRFWheel: HitRFWheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_2_1";
 			};
 			class HitRF2Wheel: HitRF2Wheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_2_2";
 			};
 			class HitRMWheel: HitRMWheel {
-				armor 	= 1;
+				armor 	= 2;				// original value: 0.5
 				name	= "wheel_2_3";
 			};
 		};
@@ -334,8 +338,8 @@ class CfgVehicles {
 		};
 		class Turrets: Turrets {
 			class MainTurret: MainTurret {
-				startEngine				= "false";
-				weapons[]				= {
+				startEngine					= "false";
+				weapons[]					= {
 					"HMG_127_UGV_SNIPER",
 					"GMG_40mm",
 					"Laserdesignator_vehicle"
@@ -348,15 +352,16 @@ class CfgVehicles {
 					directionStabilized = 1;
 					thermalMode[] 		= {5,6};
 				};
-				magazines[]= {
+				magazines[]					= {
 					"500Rnd_127x99_mag_Tracer_Red",
 					"500Rnd_127x99_mag_Tracer_Red",
 					"96Rnd_40mm_G_belt",
 					"Laserbatteries"
 				};
-				minElev					= -15;
-				discreteDistance[]		= {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500};
-				aggregateReflectors[] 	= {"Light_1"};
+				minElev						= -15;
+				discreteDistance[]			= {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500};
+				discreteDistanceInitIndex 	= 3;
+				aggregateReflectors[] 		= {"Light_1"};
 				class Reflectors {
 					class Light_1 {
 						color[] 			= {10000,10000,9500};
@@ -379,15 +384,16 @@ class CfgVehicles {
 							constant 		= 0;
 							linear			= 0;
 							quadratic		= 0.01;
-							hardLimitStart 	= 525;
+							hardLimitStart 	= 500;
 							hardLimitEnd 	= 600;
 						};
 					};
 				};
 			};
 		};
-		class Eventhandlers: Eventhandlers {
-			engine = 	"_this select 0 execVM '\UGVEnh\functions\fn_UgvUnflipVehicle.sqf';";
-		};
+		// class Eventhandlers: Eventhandlers {
+			// init	=	"_this select 0 execVM '\UGVEnh\functions\fn_UgvUnflipVehicle.sqf'";
+			// engine	= 	"_this select 0 execVM '\UGVEnh\functions\fn_UgvUnflipVehicle.sqf';";
+		// };
 	};
 };
