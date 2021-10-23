@@ -361,7 +361,7 @@ class CfgVehicles {
 					class Light_1 {
 						color[] 			= {10000,10000,9500};
 						ambient[] 			= {500,500,450};
-						intensity 			= 100;
+						intensity 			= 5;
 						size 				= 1;
 						innerAngle			= 5;
 						outerAngle 			= 35;
@@ -371,7 +371,7 @@ class CfgVehicles {
 						hitpoint 			= "HitHull";
 						selection 			= "Light_1";
 						useFlare 			= 1;
-						flareSize 			= 10;
+						flareSize 			= 20;
 						flareMaxDistance 	= 1000;
 						dayLight 			= 1;
 						class Attenuation {
@@ -379,7 +379,7 @@ class CfgVehicles {
 							constant 		= 0;
 							linear			= 0;
 							quadratic		= 0.01;
-							hardLimitStart 	= 475;
+							hardLimitStart 	= 525;
 							hardLimitEnd 	= 600;
 						};
 					};
