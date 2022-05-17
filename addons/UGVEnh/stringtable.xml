@@ -65,6 +65,10 @@
 			<Original>Precision HMG 12.7 mm</Original>
 			<German>Präzisions HMG 12.7 mm</German>
 		</Key>
+		<Key ID="STR_NIC_UGV_GMG_40mm">
+			<Original>Precision GMC 40 mm</Original>
+			<German>Präzisions GMC 40 mm</German>
+		</Key>
 		<Key ID="STR_NIC_UGV_MAX_SPEED_RD">
 			<Original>No Speed LImit On Roads</Original>
 			<German>Keine Geschwindigkeitsbegrenzung Auf Straßen</German>

@@ -35,3 +35,5 @@ if !(isNull _connectedPlayer) then {
 	if (_role == "Driver") exitWith {_connectedPlayer action ["SwitchToUAVDriver", _UGV]};			// if player was driver, give player driver role
 	if (_role == "Gunner") then {_connectedPlayer action ["SwitchToUAVGunner", _UGV]};				// if player was gunner, give player gunner role
 };
+
+_UGV call NIC_UGV_fnc_AddMineDetector;																// add mine detectors to ugv crew

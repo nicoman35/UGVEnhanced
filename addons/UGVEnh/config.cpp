@@ -3,7 +3,10 @@ class CfgPatches {
 	class UGV_01_Enhanced {
 		version 			= 1;
 		units[] 			= {"NIC_UGV_01_Enhanced"};
-		weapons[] 			= {"HMG_127_UGV_SNIPER"};
+		weapons[] 			= {
+				"HMG_127_UGV_SNIPER",
+				"GMG_40mm_SNIPER"
+		};
 		requiredVersion		= 0.1;
 		requiredAddons[]	= {
 			"A3_Characters_F",
@@ -21,13 +24,14 @@ class CfgPatches {
 class CfgFunctions {
 	class NIC_UGV {
 		class Functions {
-			file="UGVEnh\functions";
+			file = "UGVEnh\functions";
 			class UgvInit {
 				preInit = 1;
 			};
 			class AddAiDeltaSpeedAction {};
 			class AddAiDeltaSpeedActionCheck {};
 			class AddAiRefreshAction {};
+			class AddMineDetector {};
 			class CheckRoads {};
 			class DeltaMaxSpeed {};
 			class RefreshAi {};	
@@ -50,6 +54,8 @@ class DefaultVehicleSystemsDisplayManagerRight {
 class HMG_127_UGV;
 class manual;
 class Mode_Burst;
+class GMG_40mm;
+class GMG_F;
 class cfgWeapons {
 	class HMG_127_UGV_SNIPER: HMG_127_UGV {
 		scope			= 2;
@@ -181,13 +187,144 @@ class cfgWeapons {
 			maxRangeProbab			= 0.2;
 		};
 	};
+	class GMG_40mm_SNIPER: GMG_40mm {
+		scope		=2;
+		displayName	="$STR_NIC_UGV_GMG_40mm";
+		magazines[]	= {
+			"200Rnd_40mm_G_belt",
+			"96Rnd_40mm_G_belt",
+			"64Rnd_40mm_G_belt",
+			"32Rnd_40mm_G_belt"
+		};
+		magazineReloadTime=20;
+		showAimCursorInternal=0;
+		modes[]		= {
+			"manual",
+			"close",
+			"short",
+			"medium",
+			"far"
+		};
+		class manual: GMG_F {
+			displayName				="$STR_A3_GMG_40mm0";
+			sounds[]				= {
+				"StandardSound"
+			};
+			class StandardSound
+			{
+				begin1[]		= {
+					"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_01",
+					1.1220185,
+					1,
+					1200
+				};
+				begin2[]		= {
+					"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_02",
+					1.1220185,
+					1,
+					1200
+				};
+				begin3[]		= {
+					"A3\Sounds_F\arsenal\weapons_static\Static_GMG\GMG_03",
+					1.1220185,
+					1,
+					1200
+				};
+				soundBegin[]	= {
+					"begin1",
+					0.33000001,
+					"begin2",
+					0.33000001,
+					"begin3",
+					0.34
+				};
+			};
+			soundContinuous			= 0;
+			soundBurst				= 0;
+			dispersion				= 0.00099999999;		// original value: 0.0049999999	
+			aiRateOfFire			= 1;
+			aiRateOfFireDistance	= 10;
+			minRange				= 0;
+			minRangeProbab			= 0.0099999998;
+			midRange				= 1;
+			midRangeProbab			= 0.0099999998;
+			maxRange				= 2;
+			maxRangeProbab			= 0.0099999998;
+		};
+		class close: manual {
+			aiBurstTerminable		= 1;
+			showToPlayer			= 0;
+			burst					= 1;
+			burstRangeMax			= 6;
+			aiRateOfFire			= 1;
+			aiRateOfFireDispersion	= 2;
+			aiRateOfFireDistance	= 50;
+			minRange				= 16;
+			minRangeProbab			= 0.1;
+			midRange				= 100;
+			midRangeProbab			= 0.5;
+			maxRange				= 200;
+			maxRangeProbab			= 0.2;
+		};
+		class short: close {
+			aiBurstTerminable		= 1;
+			showToPlayer			= 0;
+			burst					= 1;
+			burstRangeMax			= 5;
+			aiRateOfFire			= 1;
+			aiRateOfFireDispersion	= 2;
+			aiRateOfFireDistance	= 150;
+			minRange				= 100;
+			minRangeProbab			= 0.5;
+			midRange				= 250;
+			midRangeProbab			= 0.69999999;
+			maxRange				= 500;
+			maxRangeProbab			= 0.75;
+		};
+		class medium: close {
+			aiBurstTerminable		= 1;
+			showToPlayer			= 0;
+			burst					= 1;
+			burstRangeMax			= 5;
+			aiRateOfFire			= 2;
+			aiRateOfFireDispersion	= 2;
+			aiRateOfFireDistance	= 400;
+			minRange				= 400;
+			minRangeProbab			= 0.75;
+			midRange				= 800;
+			midRangeProbab			= 0.80000001;
+			maxRange				= 1200;
+			maxRangeProbab			= 0.75;
+		};
+		class far: close {
+			aiBurstTerminable		= 1;
+			showToPlayer			= 0;
+			burst					= 1;
+			burstRangeMax			= 3;
+			aiRateOfFire			= 4;
+			aiRateOfFireDispersion	= 4;
+			aiRateOfFireDistance	= 1000;
+			minRange				= 1000;
+			minRangeProbab			= 0.76999998;
+			midRange				= 1200;
+			midRangeProbab			= 0.75;
+			maxRange				= 1500;
+			maxRangeProbab			= 0.1;
+		};
+		class GunParticles {
+			class effect1 {
+				positionName	= "usti hlavne";
+				directionName	= "konec hlavne";
+				effectName		= "GrenadeLauncherCloud";
+			};
+		};
+	};
 };
 class Viewoptics;
 class RCWSOptics;
 class Turrets;
 class MainTurret;
 class Components;
-// class Eventhandlers;
 class HitPoints	{
 	class HitLFWheel;
 	class HitLBWheel;
@@ -236,10 +373,54 @@ class CfgVehicles {
 		fuelCapacity		= 20;
 		maxOmega			= 380;
 		armor				= 40;
-		transportSoldier	= 1;		// Does not work proplerly. AI troops board the vehicle, but refuse to disembark when commanded to. Workaround: Command eject.
+		transportSoldier	= 1;						// Does not work proplerly. AI troops board the vehicle, but refuse to disembark when commanded to. Workaround: Command eject.
 		class Viewoptics: ViewOptics {
 			visionMode[]	= {"Normal", "NVG", "Ti"};
 			thermalMode[]	= {4, 5};
+		};
+		class Reflectors {
+			class Left {
+				color[]			= {1900, 1800, 1700};
+				ambient[]		= {5, 5, 5};
+				position		= "Light_L";
+				direction		= "Light_L_end";
+				hitpoint		= "Light_L";
+				selection		= "Light_L";
+				size			= 1;
+				innerAngle		= 100;
+				outerAngle		= 179;
+				coneFadeCoef	= 3;					// original value: 10
+				intensity		= 2;
+				useFlare		= 0;
+				dayLight		= 0;
+				flareSize		= 1;
+				class Attenuation {
+					start			= 1;
+					constant		= 0;
+					linear			= 0;
+					quadratic		= 0.1;				// original value: 0.25
+					hardLimitStart	= 60;				// original value: 30
+					hardLimitEnd	= 120;				// original value: 60
+				};
+			};
+			class Right: Left {
+				position	= "Light_R";
+				direction	= "Light_R_end";
+				hitpoint	= "Light_R";
+				selection	= "Light_R";
+			};
+			class Right2: Right {
+				position	= "light_R_flare";
+				useFlare	= 1;
+			};
+			class Left2: Left {
+				position	= "light_L_flare";
+				useFlare	= 1;
+			};
+			class Left3: Left2 {
+				position	= "light_L_flare2";
+				flareSize	= 0.30000001;
+			};
 		};
 		class HitPoints: HitPoints {
 			class HitHull {
@@ -310,12 +491,9 @@ class CfgVehicles {
 						componentType="MinimapDisplayComponent";
 						resource="RscCustomInfoMiniMap";
 					};
-					class UAVDisplay {
-						componentType="UAVFeedDisplayComponent";
-					};
-					class MineDetectorDisplay {			// Tried to add mine detector display component, but failed. For vehicles, missile display works, when driver has a mine detector. UGV does not, because the 'driver' is an AI. Further investigation needed
+					class MineDetectorDisplay {
 						componentType	= "MineDetectorDisplayComponent";
-					};
+					};					
 				};
 			};
 			class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight {
@@ -326,9 +504,6 @@ class CfgVehicles {
 					class MinimapDisplay {
 						componentType="MinimapDisplayComponent";
 						resource="RscCustomInfoMiniMap";
-					};
-					class UAVDisplay {
-						componentType="UAVFeedDisplayComponent";
 					};
 					class MineDetectorDisplay {
 						componentType	= "MineDetectorDisplayComponent";
@@ -341,32 +516,36 @@ class CfgVehicles {
 				startEngine					= "false";
 				weapons[]					= {
 					"HMG_127_UGV_SNIPER",
-					"GMG_40mm",
+					"GMG_40mm_SNIPER",
 					"Laserdesignator_vehicle"
 				};
 				class ViewOptics: RCWSOptics {
 					visionMode[] 		= {"Normal", "NVG", "TI"};
 					initFov 			= 0.4667;
 					maxFov 				= 0.4667;
-					minFov 				= 0.01;			// raised zoom level
+					minFov 				= 0.005;			// raised zoom level
 					directionStabilized = 1;
-					thermalMode[] 		= {5,6};
+					thermalMode[] 		= {5, 6};
 				};
 				magazines[]					= {
 					"500Rnd_127x99_mag_Tracer_Red",
 					"500Rnd_127x99_mag_Tracer_Red",
-					"96Rnd_40mm_G_belt",
+					"200Rnd_40mm_G_belt",
 					"Laserbatteries"
 				};
-				minElev						= -15;
-				discreteDistance[]			= {100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200,2300,2400,2500};
+				minElev						= -20;
+				maxElev						= 70;
+				discreteDistance[]			= {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2100, 2200, 2300, 2400, 2500};
 				discreteDistanceInitIndex 	= 3;
 				aggregateReflectors[] 		= {"Light_1"};
+				stabilizedInAxes			= 3;
+				maxHorizontalRotSpeed		= 3.0; 		// Float - the maximum horizontal speed of the turret: maxHorizontalRotSpeed/8 = X; X = time in seconds to turn 360°
+				maxVerticalRotSpeed			= 3.0; 		// Float - the maximum vertical speed of the turret, unit unknown. Bigger value - bigger rotation speed
 				class Reflectors {
 					class Light_1 {
-						color[] 			= {10000,10000,9500};
-						ambient[] 			= {500,500,450};
-						intensity 			= 5;
+						color[] 			= {10000, 10000, 9500};
+						ambient[] 			= {500, 500, 450};
+						intensity 			= 2;
 						size 				= 1;
 						innerAngle			= 5;
 						outerAngle 			= 35;
@@ -383,17 +562,43 @@ class CfgVehicles {
 							start 			= 0;
 							constant 		= 0;
 							linear			= 0;
-							quadratic		= 0.01;
+							quadratic		= 0.005;
 							hardLimitStart 	= 500;
 							hardLimitEnd 	= 600;
 						};
 					};
 				};
+				class Components: Components {  
+					class VehicleSystemsDisplayManagerComponentLeft: DefaultVehicleSystemsDisplayManagerLeft {
+						class components {
+							class EmptyDisplay {
+								componentType = "EmptyDisplayComponent";
+							};
+							class MinimapDisplay {
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class MineDetectorDisplay {
+								componentType	= "MineDetectorDisplayComponent";
+							};					
+						};
+					};
+					class VehicleSystemsDisplayManagerComponentRight: DefaultVehicleSystemsDisplayManagerRight {
+						class components {
+							class EmptyDisplay {
+								componentType="EmptyDisplayComponent";
+							};
+							class MinimapDisplay {
+								componentType="MinimapDisplayComponent";
+								resource="RscCustomInfoMiniMap";
+							};
+							class MineDetectorDisplay {
+								componentType	= "MineDetectorDisplayComponent";
+							};
+						};
+					};
+				};
 			};
 		};
-		// class Eventhandlers: Eventhandlers {
-			// init	=	"_this select 0 execVM '\UGVEnh\functions\fn_UgvUnflipVehicle.sqf'";
-			// engine	= 	"_this select 0 execVM '\UGVEnh\functions\fn_UgvUnflipVehicle.sqf';";
-		// };
 	};
 };
