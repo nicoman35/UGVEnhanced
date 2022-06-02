@@ -347,6 +347,12 @@ class CfgVehicles {
 		forceInGarage		= 1;
 		displayName			= "UGV Stomper Enhanced";
 		canFloat			= 1;
+		
+		
+		waterspeedcoef 		= 0.8;
+		waterResistanceCoef = 0.030000;
+		
+		
 		maxSpeed			= 75;
 		redRpm				= 3800;
 		class complexGearbox {
